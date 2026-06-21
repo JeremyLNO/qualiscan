@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- iCloud sync is OFF by default so the app runs locally in the Simulator with
+	     a free signing team. To enable CloudKit sync (requires a PAID Apple team and
+	     an iCloud container), add:
+	     <key>com.apple.developer.icloud-container-identifiers</key>
+	     <array><string>iCloud.company.lno.qualiscan</string></array>
+	     <key>com.apple.developer.icloud-services</key>
+	     <array><string>CloudKit</string></array>
+	     and flip ScanStore to a cloudKitDatabase configuration. -->
+</dict>
+</plist>

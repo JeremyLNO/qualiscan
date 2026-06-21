@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA0000000000000000000001 /* QualiScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000001 /* QualiScanApp.swift */; };
+		BA0000000000000000000002 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000002 /* Models.swift */; };
+		BA0000000000000000000003 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000003 /* ImageStore.swift */; };
+		BA0000000000000000000004 /* ScanProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000004 /* ScanProcessor.swift */; };
+		BA0000000000000000000005 /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000005 /* DocumentScanner.swift */; };
+		BA0000000000000000000006 /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000006 /* OCRService.swift */; };
+		BA0000000000000000000007 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000007 /* PDFExporter.swift */; };
+		BA0000000000000000000008 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000008 /* Palette.swift */; };
+		BA0000000000000000000009 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000009 /* Components.swift */; };
+		BA000000000000000000000A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000000A /* Localization.swift */; };
+		BA000000000000000000000B /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000000B /* LibraryView.swift */; };
+		BA000000000000000000000C /* DocumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000000C /* DocumentDetailView.swift */; };
+		BA000000000000000000000D /* PageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000000D /* PageEditorView.swift */; };
+		BA000000000000000000000E /* QuadCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000000E /* QuadCropView.swift */; };
+		BA000000000000000000000F /* AnnotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000000F /* AnnotateView.swift */; };
+		BA0000000000000000000010 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000010 /* ScannerView.swift */; };
+		BA0000000000000000000011 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000011 /* SettingsView.swift */; };
+		BA0000000000000000000012 /* DemoSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000012 /* DemoSeed.swift */; };
+		BA0000000000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000013 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC0000000000000000000001 /* QualiScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiScanApp.swift; sourceTree = "<group>"; };
+		AC0000000000000000000002 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AC0000000000000000000003 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		AC0000000000000000000004 /* ScanProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProcessor.swift; sourceTree = "<group>"; };
+		AC0000000000000000000005 /* DocumentScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
+		AC0000000000000000000006 /* OCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
+		AC0000000000000000000007 /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
+		AC0000000000000000000008 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		AC0000000000000000000009 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		AC000000000000000000000A /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		AC000000000000000000000B /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		AC000000000000000000000C /* DocumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailView.swift; sourceTree = "<group>"; };
+		AC000000000000000000000D /* PageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageEditorView.swift; sourceTree = "<group>"; };
+		AC000000000000000000000E /* QuadCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadCropView.swift; sourceTree = "<group>"; };
+		AC000000000000000000000F /* AnnotateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotateView.swift; sourceTree = "<group>"; };
+		AC0000000000000000000010 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		AC0000000000000000000011 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AC0000000000000000000012 /* DemoSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSeed.swift; sourceTree = "<group>"; };
+		AC0000000000000000000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC0000000000000000000014 /* QualiScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QualiScan.entitlements; sourceTree = "<group>"; };
+		CC0000000000000000000001 /* QualiScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QualiScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF0000000000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				AC0000000000000000000100 /* QualiScan */,
+				AA0000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC0000000000000000000001 /* QualiScan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000100 /* QualiScan */ = {
+			isa = PBXGroup;
+			children = (
+				AC0000000000000000000001 /* QualiScanApp.swift */,
+				AC0000000000000000000002 /* Models.swift */,
+				AC0000000000000000000003 /* ImageStore.swift */,
+				AC0000000000000000000004 /* ScanProcessor.swift */,
+				AC0000000000000000000005 /* DocumentScanner.swift */,
+				AC0000000000000000000006 /* OCRService.swift */,
+				AC0000000000000000000007 /* PDFExporter.swift */,
+				AC0000000000000000000008 /* Palette.swift */,
+				AC0000000000000000000009 /* Components.swift */,
+				AC000000000000000000000A /* Localization.swift */,
+				AC000000000000000000000B /* LibraryView.swift */,
+				AC000000000000000000000C /* DocumentDetailView.swift */,
+				AC000000000000000000000D /* PageEditorView.swift */,
+				AC000000000000000000000E /* QuadCropView.swift */,
+				AC000000000000000000000F /* AnnotateView.swift */,
+				AC0000000000000000000010 /* ScannerView.swift */,
+				AC0000000000000000000011 /* SettingsView.swift */,
+				AC0000000000000000000012 /* DemoSeed.swift */,
+				AC0000000000000000000013 /* Assets.xcassets */,
+				AC0000000000000000000014 /* QualiScan.entitlements */,
+			);
+			path = QualiScan;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB0000000000000000000001 /* QualiScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0000000000000000000002 /* Build configuration list for PBXNativeTarget "QualiScan" */;
+			buildPhases = (
+				FF0000000000000000000001 /* Sources */,
+				FF0000000000000000000004 /* Frameworks */,
+				FF0000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QualiScan;
+			productName = QualiScan;
+			productReference = CC0000000000000000000001 /* QualiScan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					BB0000000000000000000001 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = DD0000000000000000000001 /* Build configuration list for PBXProject "QualiScan" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA0000000000000000000002;
+			productRefGroup = AA0000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB0000000000000000000001 /* QualiScan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF0000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA0000000000000000000013 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA0000000000000000000001 /* QualiScanApp.swift in Sources */,
+				BA0000000000000000000002 /* Models.swift in Sources */,
+				BA0000000000000000000003 /* ImageStore.swift in Sources */,
+				BA0000000000000000000004 /* ScanProcessor.swift in Sources */,
+				BA0000000000000000000005 /* DocumentScanner.swift in Sources */,
+				BA0000000000000000000006 /* OCRService.swift in Sources */,
+				BA0000000000000000000007 /* PDFExporter.swift in Sources */,
+				BA0000000000000000000008 /* Palette.swift in Sources */,
+				BA0000000000000000000009 /* Components.swift in Sources */,
+				BA000000000000000000000A /* Localization.swift in Sources */,
+				BA000000000000000000000B /* LibraryView.swift in Sources */,
+				BA000000000000000000000C /* DocumentDetailView.swift in Sources */,
+				BA000000000000000000000D /* PageEditorView.swift in Sources */,
+				BA000000000000000000000E /* QuadCropView.swift in Sources */,
+				BA000000000000000000000F /* AnnotateView.swift in Sources */,
+				BA0000000000000000000010 /* ScannerView.swift in Sources */,
+				BA0000000000000000000011 /* SettingsView.swift in Sources */,
+				BA0000000000000000000012 /* DemoSeed.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EE0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EE0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QualiScan/QualiScan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2E6D4Q69QB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = QualiScan;
+				INFOPLIST_KEY_NSCameraUsageDescription = "QualiScan uses the camera to scan your documents.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "QualiScan saves your scanned documents to Photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "QualiScan imports photos to turn them into clean scanned documents.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = company.lno.qualiscan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QualiScan/QualiScan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2E6D4Q69QB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = QualiScan;
+				INFOPLIST_KEY_NSCameraUsageDescription = "QualiScan uses the camera to scan your documents.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "QualiScan saves your scanned documents to Photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "QualiScan imports photos to turn them into clean scanned documents.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = company.lno.qualiscan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD0000000000000000000001 /* Build configuration list for PBXProject "QualiScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE0000000000000000000001 /* Debug */,
+				EE0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0000000000000000000002 /* Build configuration list for PBXNativeTarget "QualiScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE0000000000000000000003 /* Debug */,
+				EE0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0000000000000000000001 /* Project object */;
+}

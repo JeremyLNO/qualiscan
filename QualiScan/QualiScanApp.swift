@@ -1,0 +1,39 @@
+import SwiftUI
+import SwiftData
+
+@main
+struct QualiScanApp: App {
+    let container: ModelContainer
+
+    init() {
+        let args = CommandLine.arguments
+        // -demoLang <en|fr|de|es|pt> for deterministic screenshots.
+        if let i = args.firstIndex(of: "-demoLang"), i + 1 < args.count {
+            UserDefaults.standard.set(args[i + 1], forKey: AppLanguage.storageKey)
+        }
+        do {
+            let config = ModelConfiguration(isStoredInMemoryOnly: args.contains("-inMemory"))
+            container = try ModelContainer(for: ScanDocument.self, Folder.self, ScanPage.self,
+                                           configurations: config)
+        } catch {
+            fatalError("Failed to create ModelContainer: \(error)")
+        }
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            LibraryView()
+                .task {
+                    // -seedDemo loads synthetic documents on first launch (Simulator-friendly).
+                    if CommandLine.arguments.contains("-seedDemo") {
+                        DemoSeed.seedIfNeeded(container.mainContext)
+                    }
+                    // -selfTest exports a searchable PDF and writes a report to Documents/.
+                    if CommandLine.arguments.contains("-selfTest") {
+                        SelfTest.run(container.mainContext)
+                    }
+                }
+        }
+        .modelContainer(container)
+    }
+}
