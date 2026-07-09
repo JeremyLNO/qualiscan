@@ -43,6 +43,12 @@ final class ImageStore {
             try? FileManager.default.removeItem(at: url(id, k))
         }
     }
+
+    /// Real, full deletion of every stored image (used by "Delete all data").
+    func deleteAll() {
+        try? FileManager.default.removeItem(at: dir)
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+    }
 }
 
 extension UIImage {

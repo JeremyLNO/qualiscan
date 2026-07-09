@@ -10,6 +10,9 @@ struct LibraryView: View {
 
     @AppStorage(AppLanguage.storageKey) private var languageRaw = "en"
     @AppStorage("default.filter") private var defaultFilterRaw = FilterMode.color.rawValue
+    @AppStorage("pdf.pagesize") private var pageSizeRaw = PageSize.auto.rawValue
+    @AppStorage("pdf.searchable") private var searchable = true
+    @AppStorage("pdf.watermark") private var watermark = ""
     private var lang: AppLanguage { AppLanguage(rawValue: languageRaw) ?? .en }
     private var defaultFilter: FilterMode { FilterMode(rawValue: defaultFilterRaw) ?? .color }
 
@@ -25,6 +28,14 @@ struct LibraryView: View {
     @State private var selectedFolder: Folder?
     @State private var showNewFolder = false
     @State private var newFolderName = ""
+    @State private var showRenameFolder = false
+    @State private var renameFolderDraft = ""
+    @State private var renamingDoc: ScanDocument?
+    @State private var renameDocDraft = ""
+    @State private var sharePayload: SharePayload?
+    @ObservedObject private var store = ProStore.shared
+    @State private var showPaywall = false
+    @State private var showAccount = false
 
     private let columns = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
 
@@ -51,15 +62,37 @@ struct LibraryView: View {
                 fab
                 if isProcessing { ProcessingOverlay(text: L.t("processing", lang)) }
             }
-            .navigationTitle(L.t("library_title", lang))
+            .navigationTitle(selectedFolder?.name ?? L.t("library_title", lang))
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
+                        if let f = selectedFolder {
+                            Button { renameFolderDraft = f.name; showRenameFolder = true } label: {
+                                Label(L.t("rename", lang), systemImage: "pencil")
+                            }
+                            Button(role: .destructive) { deleteFolder(f) } label: {
+                                Label(L.t("delete", lang), systemImage: "trash")
+                            }
+                            Divider()
+                        }
+                        Button { newFolderName = ""; showNewFolder = true } label: {
+                            Label(L.t("new_folder", lang), systemImage: "folder.badge.plus")
+                        }
+                        Divider()
                         Picker(L.t("sort", lang), selection: $sortByName) {
                             Label(L.t("sort_date", lang), systemImage: "calendar").tag(false)
                             Label(L.t("sort_name", lang), systemImage: "textformat").tag(true)
                         }
-                    } label: { Image(systemName: "arrow.up.arrow.down") }
+                        Picker(L.t("set_language", lang), selection: $languageRaw) {
+                            ForEach(AppLanguage.allCases) { l in
+                                Text("\(l.flag)  \(l.name)").tag(l.rawValue)
+                            }
+                        }
+                        Divider()
+                        Link(destination: AppInfo.supportURL) {
+                            Label(L.t("support", lang), systemImage: "lightbulb")
+                        }
+                    } label: { Image(systemName: "ellipsis.circle") }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: { Image(systemName: "gearshape") }
@@ -71,6 +104,8 @@ struct LibraryView: View {
             }
             .task(id: documents.count) {
                 if CommandLine.arguments.contains("-openSettings") { showSettings = true }
+                if CommandLine.arguments.contains("-showPaywall") { showPaywall = true }
+                if CommandLine.arguments.contains("-openAccount") { showAccount = true }
                 handleDeepLink()
             }
             .alert(L.t("new_folder", lang), isPresented: $showNewFolder) {
@@ -78,7 +113,21 @@ struct LibraryView: View {
                 Button(L.t("save", lang)) { createFolder() }
                 Button(L.t("cancel", lang), role: .cancel) {}
             }
+            .alert(L.t("rename", lang), isPresented: $showRenameFolder) {
+                TextField(L.t("folder_name", lang), text: $renameFolderDraft)
+                Button(L.t("save", lang)) { renameFolder() }
+                Button(L.t("cancel", lang), role: .cancel) {}
+            }
+            .alert(L.t("rename", lang), isPresented: Binding(get: { renamingDoc != nil },
+                                                             set: { if !$0 { renamingDoc = nil } })) {
+                TextField(L.t("untitled", lang), text: $renameDocDraft)
+                Button(L.t("save", lang)) { renameDocApply() }
+                Button(L.t("cancel", lang), role: .cancel) { renamingDoc = nil }
+            }
             .sheet(isPresented: $showSettings) { SettingsView() }
+            .sheet(isPresented: $showPaywall) { PaywallView() }
+            .sheet(isPresented: $showAccount) { NavigationStack { AccountView() } }
+            .sheet(item: $sharePayload) { ShareSheet(items: $0.items) }
             .fullScreenCover(isPresented: $showCamera) {
                 DocumentCameraView(
                     onScan: { images in showCamera = false; process(images) },
@@ -120,7 +169,14 @@ struct LibraryView: View {
                             DocumentCard(doc: doc, lang: lang)
                         }
                         .buttonStyle(.plain)
+                        .overlay(alignment: .topTrailing) { docMenu(doc) }
                         .contextMenu {
+                            Button { startRename(doc) } label: {
+                                Label(L.t("rename", lang), systemImage: "pencil")
+                            }
+                            Button { share(doc) } label: {
+                                Label(L.t("share", lang), systemImage: "square.and.arrow.up")
+                            }
                             Button(role: .destructive) { delete(doc) } label: {
                                 Label(L.t("delete", lang), systemImage: "trash")
                             }
@@ -184,8 +240,8 @@ struct LibraryView: View {
             HStack {
                 Spacer()
                 Menu {
-                    Button { showCamera = true } label: { Label(L.t("scan_camera", lang), systemImage: "camera.viewfinder") }
-                    Button { showPicker = true } label: { Label(L.t("import_photos", lang), systemImage: "photo.on.rectangle") }
+                    Button { gatedNew { showCamera = true } } label: { Label(L.t("scan_camera", lang), systemImage: "camera.viewfinder") }
+                    Button { gatedNew { showPicker = true } } label: { Label(L.t("import_photos", lang), systemImage: "photo.on.rectangle") }
                 } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 26, weight: .bold))
@@ -198,6 +254,24 @@ struct LibraryView: View {
                 .padding(.bottom, 26)
             }
         }
+    }
+
+    /// Per-card "…" options button (rename / share / delete).
+    private func docMenu(_ doc: ScanDocument) -> some View {
+        Menu {
+            Button { startRename(doc) } label: { Label(L.t("rename", lang), systemImage: "pencil") }
+            Button { share(doc) } label: { Label(L.t("share", lang), systemImage: "square.and.arrow.up") }
+            Divider()
+            Button(role: .destructive) { delete(doc) } label: { Label(L.t("delete", lang), systemImage: "trash") }
+        } label: {
+            Image(systemName: "ellipsis")
+                .font(.system(size: 15, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 30, height: 30)
+                .background(.black.opacity(0.4), in: Circle())
+                .padding(8)
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: Actions
@@ -258,6 +332,49 @@ struct LibraryView: View {
         context.delete(f)
         try? context.save()
     }
+
+    private func renameFolder() {
+        let name = renameFolderDraft.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty, let f = selectedFolder else { return }
+        f.name = name
+        try? context.save()
+    }
+
+    private func startRename(_ doc: ScanDocument) {
+        renameDocDraft = doc.title
+        renamingDoc = doc
+    }
+
+    private func renameDocApply() {
+        guard let doc = renamingDoc else { return }
+        let name = renameDocDraft.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !name.isEmpty { doc.title = name; doc.touch(); try? context.save() }
+        renamingDoc = nil
+    }
+
+    private func share(_ doc: ScanDocument) {
+        Task {
+            isProcessing = true
+            await Task.yield()
+            let opts = PDFExporter.Options(
+                pageSize: PageSize(rawValue: pageSizeRaw) ?? .auto,
+                watermark: watermark.isEmpty ? nil : watermark,
+                searchable: searchable,
+                languages: lang.ocrCodes)
+            let url = PDFExporter.shared.makePDF(doc, options: opts)
+            isProcessing = false
+            if let url { sharePayload = SharePayload(items: [url]) }
+        }
+    }
+
+    /// Free tier allows up to `freeDocumentLimit` documents; beyond that, Pro is required.
+    private var canAddDocument: Bool {
+        store.isPro || documents.count < ProStore.freeDocumentLimit
+    }
+
+    private func gatedNew(_ action: () -> Void) {
+        if canAddDocument { action() } else { showPaywall = true }
+    }
 }
 
 // MARK: - Document card
@@ -278,7 +395,7 @@ struct DocumentCard: View {
             }
             .frame(height: 168)
             .clipped()
-            .overlay(alignment: .topTrailing) {
+            .overlay(alignment: .topLeading) {
                 Label("\(doc.pageCount)", systemImage: "doc.on.doc")
                     .font(.system(size: 11, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)

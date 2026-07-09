@@ -26,6 +26,10 @@
 		BA0000000000000000000011 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000011 /* SettingsView.swift */; };
 		BA0000000000000000000012 /* DemoSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000012 /* DemoSeed.swift */; };
 		BA0000000000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000013 /* Assets.xcassets */; };
+		BA0000000000000000000014 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000015 /* Store.swift */; };
+		BA0000000000000000000015 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000016 /* PaywallView.swift */; };
+		BA0000000000000000000016 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000018 /* AuthService.swift */; };
+		BA0000000000000000000017 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000019 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,11 @@
 		AC0000000000000000000012 /* DemoSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSeed.swift; sourceTree = "<group>"; };
 		AC0000000000000000000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0000000000000000000014 /* QualiScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QualiScan.entitlements; sourceTree = "<group>"; };
+		AC0000000000000000000015 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AC0000000000000000000016 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		AC0000000000000000000017 /* QualiScan.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = QualiScan.storekit; sourceTree = "<group>"; };
+		AC0000000000000000000018 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AC0000000000000000000019 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		CC0000000000000000000001 /* QualiScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QualiScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +111,11 @@
 				AC0000000000000000000012 /* DemoSeed.swift */,
 				AC0000000000000000000013 /* Assets.xcassets */,
 				AC0000000000000000000014 /* QualiScan.entitlements */,
+				AC0000000000000000000015 /* Store.swift */,
+				AC0000000000000000000016 /* PaywallView.swift */,
+				AC0000000000000000000017 /* QualiScan.storekit */,
+				AC0000000000000000000018 /* AuthService.swift */,
+				AC0000000000000000000019 /* AccountView.swift */,
 			);
 			path = QualiScan;
 			sourceTree = "<group>";
@@ -193,6 +207,10 @@
 				BA0000000000000000000010 /* ScannerView.swift in Sources */,
 				BA0000000000000000000011 /* SettingsView.swift in Sources */,
 				BA0000000000000000000012 /* DemoSeed.swift in Sources */,
+				BA0000000000000000000014 /* Store.swift in Sources */,
+				BA0000000000000000000015 /* PaywallView.swift in Sources */,
+				BA0000000000000000000016 /* AuthService.swift in Sources */,
+				BA0000000000000000000017 /* AccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

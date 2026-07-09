@@ -180,3 +180,14 @@ extension View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
+
+// MARK: - App info / support
+
+enum AppInfo {
+    /// "Support & ideas" destination (web page).
+    static let supportURL = URL(string: "https://crazybeelabs.com/support/")!
+    /// Crazy Bee Labs website.
+    static let siteURL = URL(string: "https://crazybeelabs.com/")!
+    /// Privacy policy (required by App Review).
+    static let privacyURL = URL(string: "https://www.crazybeelabs.com/privacy-policy/")!
+}
