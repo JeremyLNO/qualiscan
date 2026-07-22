@@ -33,8 +33,6 @@ struct LibraryView: View {
     @State private var renamingDoc: ScanDocument?
     @State private var renameDocDraft = ""
     @State private var sharePayload: SharePayload?
-    @ObservedObject private var store = ProStore.shared
-    @State private var showPaywall = false
     @State private var showAccount = false
 
     private let columns = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
@@ -104,7 +102,6 @@ struct LibraryView: View {
             }
             .task(id: documents.count) {
                 if CommandLine.arguments.contains("-openSettings") { showSettings = true }
-                if CommandLine.arguments.contains("-showPaywall") { showPaywall = true }
                 if CommandLine.arguments.contains("-openAccount") { showAccount = true }
                 handleDeepLink()
             }
@@ -125,7 +122,6 @@ struct LibraryView: View {
                 Button(L.t("cancel", lang), role: .cancel) { renamingDoc = nil }
             }
             .sheet(isPresented: $showSettings) { SettingsView() }
-            .sheet(isPresented: $showPaywall) { PaywallView() }
             .sheet(isPresented: $showAccount) { NavigationStack { AccountView() } }
             .sheet(item: $sharePayload) { ShareSheet(items: $0.items) }
             .fullScreenCover(isPresented: $showCamera) {
@@ -240,8 +236,8 @@ struct LibraryView: View {
             HStack {
                 Spacer()
                 Menu {
-                    Button { gatedNew { showCamera = true } } label: { Label(L.t("scan_camera", lang), systemImage: "camera.viewfinder") }
-                    Button { gatedNew { showPicker = true } } label: { Label(L.t("import_photos", lang), systemImage: "photo.on.rectangle") }
+                    Button { showCamera = true } label: { Label(L.t("scan_camera", lang), systemImage: "camera.viewfinder") }
+                    Button { showPicker = true } label: { Label(L.t("import_photos", lang), systemImage: "photo.on.rectangle") }
                 } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 26, weight: .bold))
@@ -367,14 +363,6 @@ struct LibraryView: View {
         }
     }
 
-    /// Free tier allows up to `freeDocumentLimit` documents; beyond that, Pro is required.
-    private var canAddDocument: Bool {
-        store.isPro || documents.count < ProStore.freeDocumentLimit
-    }
-
-    private func gatedNew(_ action: () -> Void) {
-        if canAddDocument { action() } else { showPaywall = true }
-    }
 }
 
 // MARK: - Document card

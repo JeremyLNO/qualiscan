@@ -26,10 +26,10 @@
 		BA0000000000000000000011 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000011 /* SettingsView.swift */; };
 		BA0000000000000000000012 /* DemoSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000012 /* DemoSeed.swift */; };
 		BA0000000000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000013 /* Assets.xcassets */; };
-		BA0000000000000000000014 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000015 /* Store.swift */; };
-		BA0000000000000000000015 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000016 /* PaywallView.swift */; };
 		BA0000000000000000000016 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000018 /* AuthService.swift */; };
 		BA0000000000000000000017 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0000000000000000000019 /* AccountView.swift */; };
+		BA0000000000000000000018 /* AppLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001A /* AppLicense.swift */; };
+		BA0000000000000000000019 /* CrazyBeeLicense in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0000000000000000000001 /* CrazyBeeLicense */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,11 +53,9 @@
 		AC0000000000000000000012 /* DemoSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSeed.swift; sourceTree = "<group>"; };
 		AC0000000000000000000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0000000000000000000014 /* QualiScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QualiScan.entitlements; sourceTree = "<group>"; };
-		AC0000000000000000000015 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		AC0000000000000000000016 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
-		AC0000000000000000000017 /* QualiScan.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = QualiScan.storekit; sourceTree = "<group>"; };
 		AC0000000000000000000018 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AC0000000000000000000019 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		AC000000000000000000001A /* AppLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLicense.swift; sourceTree = "<group>"; };
 		CC0000000000000000000001 /* QualiScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QualiScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0000000000000000000019 /* CrazyBeeLicense in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,11 +110,9 @@
 				AC0000000000000000000012 /* DemoSeed.swift */,
 				AC0000000000000000000013 /* Assets.xcassets */,
 				AC0000000000000000000014 /* QualiScan.entitlements */,
-				AC0000000000000000000015 /* Store.swift */,
-				AC0000000000000000000016 /* PaywallView.swift */,
-				AC0000000000000000000017 /* QualiScan.storekit */,
 				AC0000000000000000000018 /* AuthService.swift */,
 				AC0000000000000000000019 /* AccountView.swift */,
+				AC000000000000000000001A /* AppLicense.swift */,
 			);
 			path = QualiScan;
 			sourceTree = "<group>";
@@ -136,6 +133,9 @@
 			dependencies = (
 			);
 			name = QualiScan;
+			packageProductDependencies = (
+				5F0000000000000000000001 /* CrazyBeeLicense */,
+			);
 			productName = QualiScan;
 			productReference = CC0000000000000000000001 /* QualiScan.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +164,9 @@
 				Base,
 			);
 			mainGroup = AA0000000000000000000002;
+			packageReferences = (
+				410000000000000000000001 /* XCLocalSwiftPackageReference "../crazybee-license-kit" */,
+			);
 			productRefGroup = AA0000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,14 +210,28 @@
 				BA0000000000000000000010 /* ScannerView.swift in Sources */,
 				BA0000000000000000000011 /* SettingsView.swift in Sources */,
 				BA0000000000000000000012 /* DemoSeed.swift in Sources */,
-				BA0000000000000000000014 /* Store.swift in Sources */,
-				BA0000000000000000000015 /* PaywallView.swift in Sources */,
+				BA0000000000000000000018 /* AppLicense.swift in Sources */,
 				BA0000000000000000000016 /* AuthService.swift in Sources */,
 				BA0000000000000000000017 /* AccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		410000000000000000000001 /* XCLocalSwiftPackageReference "../crazybee-license-kit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../crazybee-license-kit";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F0000000000000000000001 /* CrazyBeeLicense */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 410000000000000000000001 /* XCLocalSwiftPackageReference "../crazybee-license-kit" */;
+			productName = CrazyBeeLicense;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EE0000000000000000000001 /* Debug */ = {

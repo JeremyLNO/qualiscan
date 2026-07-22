@@ -1,13 +1,12 @@
 import SwiftUI
 import SwiftData
+import CrazyBeeLicense
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
-    @ObservedObject private var store = ProStore.shared
     @ObservedObject private var authSession = AuthSession.shared
     @State private var showWipeConfirm = false
-    @State private var showPaywall = false
     @AppStorage(AppLanguage.storageKey) private var languageRaw = "en"
     @AppStorage("default.filter") private var defaultFilterRaw = FilterMode.color.rawValue
     @AppStorage("pdf.pagesize") private var pageSizeRaw = PageSize.auto.rawValue
@@ -32,25 +31,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    if store.isPro {
-                        Label(L.t("pro_active", lang), systemImage: "checkmark.seal.fill")
-                            .foregroundStyle(Palette.success)
-                    } else {
-                        Button { showPaywall = true } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "crown.fill").font(.title3).foregroundStyle(LinearGradient.brand)
-                                VStack(alignment: .leading, spacing: 1) {
-                                    Text("QualiScan Pro").font(.headline).foregroundStyle(Palette.ink)
-                                    Text(L.t("get_pro", lang)).font(.caption).foregroundStyle(Palette.sub)
-                                }
-                                Spacer()
-                                Image(systemName: "chevron.right").font(.footnote).foregroundStyle(Palette.faint)
-                            }
-                        }
-                    }
-                    Button { Task { await store.restore() } } label: {
-                        Label(L.t("pay_restore", lang), systemImage: "arrow.clockwise")
-                    }
+                    LicenseSettingsView(manager: AppLicense.manager)
                 }
 
                 Section(L.t("general", lang)) {
@@ -150,7 +131,6 @@ struct SettingsView: View {
             } message: {
                 Text(L.t("delete_all_data_msg", lang))
             }
-            .sheet(isPresented: $showPaywall) { PaywallView() }
         }
         .tint(Palette.brand)
     }

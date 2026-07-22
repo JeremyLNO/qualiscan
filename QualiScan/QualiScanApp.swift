@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import CrazyBeeLicense
 
 @main
 struct QualiScanApp: App {
@@ -22,18 +23,40 @@ struct QualiScanApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LibraryView()
-                .task {
-                    // -seedDemo loads synthetic documents on first launch (Simulator-friendly).
-                    if CommandLine.arguments.contains("-seedDemo") {
-                        DemoSeed.seedIfNeeded(container.mainContext)
-                    }
-                    // -selfTest exports a searchable PDF and writes a report to Documents/.
-                    if CommandLine.arguments.contains("-selfTest") {
-                        SelfTest.run(container.mainContext)
-                    }
-                }
+            AppGate(container: container)
         }
         .modelContainer(container)
+    }
+}
+
+/// Gates the whole app behind the license state — trial running or a valid license
+/// shows `LibraryView`, otherwise the shared `LicenseLockedView` paywall.
+private struct AppGate: View {
+    let container: ModelContainer
+    @ObservedObject private var license = AppLicense.manager
+
+    var body: some View {
+        Group {
+            if license.isFunctional {
+                LibraryView()
+                    .task {
+                        // -seedDemo loads synthetic documents on first launch (Simulator-friendly).
+                        if CommandLine.arguments.contains("-seedDemo") {
+                            DemoSeed.seedIfNeeded(container.mainContext)
+                        }
+                        // -selfTest exports a searchable PDF and writes a report to Documents/.
+                        if CommandLine.arguments.contains("-selfTest") {
+                            SelfTest.run(container.mainContext)
+                        }
+                    }
+            } else {
+                LicenseLockedView(
+                    manager: license,
+                    features: AppLicense.features,
+                    logo: Image("CrazyBeeLabsLogo")
+                )
+            }
+        }
+        .task { await license.refresh() }
     }
 }

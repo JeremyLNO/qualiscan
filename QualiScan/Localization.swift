@@ -51,6 +51,14 @@ enum L {
     }
 
     static let table: [String: [AppLanguage: String]] = [
+        // License
+        "unlimited_docs": [.en: "Unlimited documents", .fr: "Documents illimités", .de: "Unbegrenzte Dokumente", .es: "Documentos ilimitados", .pt: "Documentos ilimitados"],
+        "unlimited_docs_detail": [.en: "Scan and keep as many documents as you need.", .fr: "Numérisez et gardez autant de documents que nécessaire.", .de: "Scannen und behalten Sie so viele Dokumente wie nötig.", .es: "Escanea y conserva tantos documentos como necesites.", .pt: "Digitalize e guarde tantos documentos quantos precisar."],
+        "license_feature_ocr_title": [.en: "On-device OCR", .fr: "OCR sur l'appareil", .de: "OCR auf dem Gerät", .es: "OCR en el dispositivo", .pt: "OCR no dispositivo"],
+        "license_feature_ocr_detail": [.en: "Searchable text in every scan.", .fr: "Texte recherchable dans chaque scan.", .de: "Durchsuchbarer Text in jedem Scan.", .es: "Texto con búsqueda en cada escaneo.", .pt: "Texto pesquisável em cada digitalização."],
+        "license_feature_export_title": [.en: "Searchable PDF export", .fr: "Export PDF recherchable", .de: "Durchsuchbarer PDF-Export", .es: "Exportación de PDF con búsqueda", .pt: "Exportação de PDF pesquisável"],
+        "license_feature_export_detail": [.en: "Multi-page PDFs, with an optional watermark.", .fr: "PDF multi-pages, avec filigrane en option.", .de: "Mehrseitige PDFs, mit optionalem Wasserzeichen.", .es: "PDFs multipágina, con marca de agua opcional.", .pt: "PDFs multipágina, com marca de água opcional."],
+
         // App
         "app_name": [.en: "QualiScan", .fr: "QualiScan", .de: "QualiScan", .es: "QualiScan", .pt: "QualiScan"],
         "app_tagline": [.en: "Scan. Clean. Share.", .fr: "Scanner. Nettoyer. Partager.", .de: "Scannen. Säubern. Teilen.", .es: "Escanea. Limpia. Comparte.", .pt: "Digitalize. Limpe. Partilhe."],
