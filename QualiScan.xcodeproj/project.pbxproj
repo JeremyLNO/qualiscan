@@ -323,6 +323,7 @@
 				DEVELOPMENT_TEAM = 2E6D4Q69QB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_CFBundleDisplayName = QualiScan;
 				INFOPLIST_KEY_NSCameraUsageDescription = "QualiScan uses the camera to scan your documents.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "QualiScan saves your scanned documents to Photos.";
@@ -356,6 +357,7 @@
 				DEVELOPMENT_TEAM = 2E6D4Q69QB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_CFBundleDisplayName = QualiScan;
 				INFOPLIST_KEY_NSCameraUsageDescription = "QualiScan uses the camera to scan your documents.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "QualiScan saves your scanned documents to Photos.";
