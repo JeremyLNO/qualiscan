@@ -63,6 +63,12 @@ enum L {
         "app_name": [.en: "QualiScan", .fr: "QualiScan", .de: "QualiScan", .es: "QualiScan", .pt: "QualiScan"],
         "app_tagline": [.en: "Scan. Clean. Share.", .fr: "Scanner. Nettoyer. Partager.", .de: "Scannen. Säubern. Teilen.", .es: "Escanea. Limpia. Comparte.", .pt: "Digitalize. Limpe. Partilhe."],
 
+        // Onboarding
+        "onboarding_next": [.en: "Next", .fr: "Suivant", .de: "Weiter", .es: "Siguiente", .pt: "Seguinte"],
+        "onboarding_get_started": [.en: "Get started", .fr: "Commencer", .de: "Loslegen", .es: "Empezar", .pt: "Começar"],
+        "onboarding_trial_title": [.en: "Your 7-day free trial has started", .fr: "Votre essai gratuit de 7 jours a commencé", .de: "Ihre 7-tägige kostenlose Testversion hat begonnen", .es: "Tu prueba gratuita de 7 días ha comenzado", .pt: "O seu teste gratuito de 7 dias começou"],
+        "onboarding_trial_body": [.en: "Every feature is unlocked for 7 days — no payment info needed.", .fr: "Toutes les fonctionnalités sont débloquées pendant 7 jours — aucune information de paiement requise.", .de: "Alle Funktionen sind 7 Tage lang freigeschaltet — keine Zahlungsdaten erforderlich.", .es: "Todas las funciones están desbloqueadas durante 7 días — no se necesitan datos de pago.", .pt: "Todas as funcionalidades estão desbloqueadas durante 7 dias — sem necessidade de dados de pagamento."],
+
         // Library
         "library_title": [.en: "Documents", .fr: "Documents", .de: "Dokumente", .es: "Documentos", .pt: "Documentos"],
         "search_placeholder": [.en: "Search documents", .fr: "Rechercher un document", .de: "Dokumente suchen", .es: "Buscar documentos", .pt: "Procurar documentos"],

@@ -12,6 +12,10 @@ struct QualiScanApp: App {
         if let i = args.firstIndex(of: "-demoLang"), i + 1 < args.count {
             UserDefaults.standard.set(args[i + 1], forKey: AppLanguage.storageKey)
         }
+        // -skipOnboarding marks first-launch onboarding as already seen (screenshot/test automation).
+        if args.contains("-skipOnboarding") {
+            UserDefaults.standard.set(true, forKey: "onboarding.completed")
+        }
         do {
             let config = ModelConfiguration(isStoredInMemoryOnly: args.contains("-inMemory"))
             container = try ModelContainer(for: ScanDocument.self, Folder.self, ScanPage.self,
@@ -23,9 +27,23 @@ struct QualiScanApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AppGate(container: container)
+            RootView(container: container)
         }
         .modelContainer(container)
+    }
+}
+
+/// Shows first-launch `OnboardingView` once, then falls through to the existing `AppGate`.
+private struct RootView: View {
+    let container: ModelContainer
+    @AppStorage("onboarding.completed") private var onboardingCompleted = false
+
+    var body: some View {
+        if onboardingCompleted {
+            AppGate(container: container)
+        } else {
+            OnboardingView()
+        }
     }
 }
 
