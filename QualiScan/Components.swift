@@ -190,4 +190,8 @@ enum AppInfo {
     static let siteURL = URL(string: "https://crazybeelabs.com/")!
     /// Privacy policy (required by App Review).
     static let privacyURL = URL(string: "https://www.crazybeelabs.com/privacy-policy/")!
+    /// Terms of use — Apple's standard EULA, required next to an auto-renewable subscription.
+    static let termsURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+    /// Apple's subscription management screen.
+    static let manageSubscriptionsURL = URL(string: "https://apps.apple.com/account/subscriptions")!
 }

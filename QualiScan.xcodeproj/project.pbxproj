@@ -31,6 +31,8 @@
 		BA0000000000000000000018 /* AppLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001A /* AppLicense.swift */; };
 		BA0000000000000000000019 /* CrazyBeeLicense in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0000000000000000000001 /* CrazyBeeLicense */; };
 		BA000000000000000000001A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001B /* OnboardingView.swift */; };
+		BA000000000000000000001B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001C /* Store.swift */; };
+		BA000000000000000000001C /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001D /* PaywallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,9 @@
 		AC0000000000000000000019 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		AC000000000000000000001A /* AppLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLicense.swift; sourceTree = "<group>"; };
 		AC000000000000000000001B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		AC000000000000000000001C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AC000000000000000000001D /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		AC000000000000000000001E /* QualiScan.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = QualiScan.storekit; sourceTree = "<group>"; };
 		CC0000000000000000000001 /* QualiScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QualiScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +121,9 @@
 				AC0000000000000000000019 /* AccountView.swift */,
 				AC000000000000000000001A /* AppLicense.swift */,
 				AC000000000000000000001B /* OnboardingView.swift */,
+				AC000000000000000000001C /* Store.swift */,
+				AC000000000000000000001D /* PaywallView.swift */,
+				AC000000000000000000001E /* QualiScan.storekit */,
 			);
 			path = QualiScan;
 			sourceTree = "<group>";
@@ -217,6 +225,8 @@
 				BA0000000000000000000016 /* AuthService.swift in Sources */,
 				BA0000000000000000000017 /* AccountView.swift in Sources */,
 				BA000000000000000000001A /* OnboardingView.swift in Sources */,
+				BA000000000000000000001B /* Store.swift in Sources */,
+				BA000000000000000000001C /* PaywallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
