@@ -23,6 +23,7 @@ struct QualiScanApp: App {
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }
+        OneSignalPush.start()
     }
 
     var body: some Scene {

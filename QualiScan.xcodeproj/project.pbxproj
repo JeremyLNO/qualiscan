@@ -33,6 +33,8 @@
 		BA000000000000000000001A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001B /* OnboardingView.swift */; };
 		BA000000000000000000001B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001C /* Store.swift */; };
 		BA000000000000000000001C /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC000000000000000000001D /* PaywallView.swift */; };
+		A965F95521FCB2F1BD5B8A12 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = C07A5085B3884DEFF1613A64 /* OneSignalFramework */; };
+		88C0217BFFCAE908BFCC894E /* OneSignalPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9CC60005492F436F86B2F /* OneSignalPush.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,7 @@
 		AC0000000000000000000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0000000000000000000014 /* QualiScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QualiScan.entitlements; sourceTree = "<group>"; };
 		AC0000000000000000000018 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A5B9CC60005492F436F86B2F /* OneSignalPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalPush.swift; sourceTree = "<group>"; };
 		AC0000000000000000000019 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		AC000000000000000000001A /* AppLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLicense.swift; sourceTree = "<group>"; };
 		AC000000000000000000001B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A965F95521FCB2F1BD5B8A12 /* OneSignalFramework in Frameworks */,
 				BA0000000000000000000019 /* CrazyBeeLicense in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,7 @@
 				AC0000000000000000000013 /* Assets.xcassets */,
 				AC0000000000000000000014 /* QualiScan.entitlements */,
 				AC0000000000000000000018 /* AuthService.swift */,
+				A5B9CC60005492F436F86B2F /* OneSignalPush.swift */,
 				AC0000000000000000000019 /* AccountView.swift */,
 				AC000000000000000000001A /* AppLicense.swift */,
 				AC000000000000000000001B /* OnboardingView.swift */,
@@ -145,6 +150,7 @@
 			);
 			name = QualiScan;
 			packageProductDependencies = (
+				C07A5085B3884DEFF1613A64 /* OneSignalFramework */,
 				5F0000000000000000000001 /* CrazyBeeLicense */,
 			);
 			productName = QualiScan;
@@ -176,6 +182,7 @@
 			);
 			mainGroup = AA0000000000000000000002;
 			packageReferences = (
+				3A8C56E91C66753156E5B40B /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 				410000000000000000000001 /* XCLocalSwiftPackageReference "../crazybee-license-kit" */,
 			);
 			productRefGroup = AA0000000000000000000003 /* Products */;
@@ -203,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C0217BFFCAE908BFCC894E /* OneSignalPush.swift in Sources */,
 				BA0000000000000000000001 /* QualiScanApp.swift in Sources */,
 				BA0000000000000000000002 /* Models.swift in Sources */,
 				BA0000000000000000000003 /* ImageStore.swift in Sources */,
@@ -245,7 +253,23 @@
 			package = 410000000000000000000001 /* XCLocalSwiftPackageReference "../crazybee-license-kit" */;
 			productName = CrazyBeeLicense;
 		};
+		C07A5085B3884DEFF1613A64 /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A8C56E91C66753156E5B40B /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A8C56E91C66753156E5B40B /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCBuildConfiguration section */
 		EE0000000000000000000001 /* Debug */ = {
