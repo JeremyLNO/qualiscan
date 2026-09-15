@@ -13,6 +13,7 @@ struct SettingsView: View {
     @AppStorage("pdf.pagesize") private var pageSizeRaw = PageSize.auto.rawValue
     @AppStorage("pdf.searchable") private var searchable = true
     @AppStorage("pdf.watermark") private var watermark = ""
+    @AppStorage("push.cbl.enabled") private var cblNews = false
     private var lang: AppLanguage { AppLanguage(rawValue: languageRaw) ?? .en }
 
     var body: some View {
@@ -85,6 +86,20 @@ struct SettingsView: View {
                             .multilineTextAlignment(.trailing)
                             .textInputAutocapitalization(.characters)
                     }
+                }
+
+                Section {
+                    Toggle(L.t("cbl_news", lang), isOn: $cblNews)
+                        .onChange(of: cblNews) { _, on in
+                            // Demander la permission système au moment où l'utilisateur dit oui,
+                            // jamais au lancement : c'est lui qui ouvre la porte.
+                            if on { OneSignalPush.promptForPermission() }
+                            OneSignalPush.setOptedIn(on)
+                        }
+                } header: {
+                    Text(L.t("notifications", lang))
+                } footer: {
+                    Text(L.t("cbl_news_note", lang))
                 }
 
                 Section {

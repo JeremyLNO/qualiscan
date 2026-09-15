@@ -215,6 +215,13 @@ enum L {
         "auth_network_error": [.en: "No connection. Check your network and try again.", .fr: "Pas de connexion. Vérifie ton réseau et réessaie.", .de: "Keine Verbindung. Netzwerk prüfen und erneut versuchen.", .es: "Sin conexión. Revisa tu red e inténtalo de nuevo.", .pt: "Sem ligação. Verifica a rede e tenta novamente."],
         "google_setup_needed": [.en: "Google sign-in isn't set up yet.", .fr: "La connexion Google n'est pas encore configurée.", .de: "Google-Anmeldung ist noch nicht eingerichtet.", .es: "El inicio con Google aún no está configurado.", .pt: "O início com Google ainda não está configurado."],
         "general": [.en: "General", .fr: "Général", .de: "Allgemein", .es: "General", .pt: "Geral"],
+        "notifications": [.en: "Notifications", .fr: "Notifications", .de: "Mitteilungen", .es: "Notificaciones", .pt: "Notificações"],
+        "cbl_news": [.en: "Crazy Bee Labs news", .fr: "Actualités Crazy Bee Labs", .de: "Neues von Crazy Bee Labs", .es: "Novedades de Crazy Bee Labs", .pt: "Novidades da Crazy Bee Labs"],
+        "cbl_news_note": [.en: "Occasional word about updates and new apps. Your scans stay on this device either way.",
+                          .fr: "Un mot de temps en temps sur les mises à jour et les nouvelles apps. Vos scans restent sur cet appareil dans tous les cas.",
+                          .de: "Gelegentlich ein Wort zu Updates und neuen Apps. Ihre Scans bleiben so oder so auf diesem Gerät.",
+                          .es: "Alguna que otra novedad sobre actualizaciones y nuevas apps. Tus escaneos se quedan en este dispositivo en cualquier caso.",
+                          .pt: "De vez em quando, uma palavra sobre atualizações e novas apps. As suas digitalizações ficam neste dispositivo de qualquer forma."],
         "export_section": [.en: "Export", .fr: "Export", .de: "Export", .es: "Exportar", .pt: "Exportação"],
 
         // Page sizes
