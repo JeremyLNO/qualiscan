@@ -19,3 +19,5 @@ xcuserdata/
 .swiftpm/
 Packages/
 Package.resolved
+Vendor/*/.build/
+*.xcodeproj/-Xcc/
