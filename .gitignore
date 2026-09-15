@@ -21,3 +21,9 @@ Packages/
 Package.resolved
 Vendor/*/.build/
 *.xcodeproj/-Xcc/
+
+# Les xcframeworks vendorés embarquent leurs dSYM, et leur Info.plist les déclare
+# (DebugSymbolsPath). La règle *.dSYM ci-dessus les tenait hors du dépôt : l'archive
+# échouait alors sur « Missing path … /dSYMs … as defined by DebugSymbolsPath ».
+!Vendor/**
+Vendor/*/.build/
